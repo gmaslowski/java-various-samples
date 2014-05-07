@@ -7,7 +7,7 @@ Simple example on how to return different payload type (JSON/XML) based on Accep
 Navigate to project and run:
 ```bash
 gradle jettyRun
-```bash
+```
 
 ## Examples
 ### JSON Payload
