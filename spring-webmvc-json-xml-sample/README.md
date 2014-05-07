@@ -3,7 +3,14 @@ spring-webmvc-json-sample
 
 Simple example on how to return different payload type (JSON/XML) based on Accept header.
 
-*
+## Run
+Navigate to project and run:
+```bash
+gradle jettyRun
+```bash
+
+## Examples
+### JSON Payload
 ```bash
 curl http://localhost:8080/spring-webmvc-json-xml-sample/entity -H "Accept: application/json"
 ```
@@ -11,7 +18,7 @@ curl http://localhost:8080/spring-webmvc-json-xml-sample/entity -H "Accept: appl
 {"name":"simpleName","values":["value1","value2","value3"]}
 ```
 
-*
+### XML Payload
 ```bash
 curl http://localhost:8080/spring-webmvc-json-xml-sample/entity -H "Accept: application/xml"
 ```
