@@ -1,0 +1,31 @@
+guavaVersion='17.0'
+springVersion='4.0.4.RELEASE'
+jacksonVersion='2.3.3'
+jaxbVersion='2.2'
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'jetty'
+
+group = 'com.gmaslowski'
+version = '0.1-SNAPSHOT'
+sourceCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.google.guava', name: 'guava', version: guavaVersion
+
+    compile group: 'org.springframework', name: 'spring-core', version: springVersion
+    compile group: 'org.springframework', name: 'spring-webmvc', version: springVersion
+    compile group: 'org.springframework', name: 'spring-oxm', version: springVersion
+
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: jacksonVersion
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: jacksonVersion
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: jacksonVersion
+
+    compile group: 'javax.xml.bind', name: 'jaxb-api', version: jaxbVersion
+    compile group: 'com.sun.xml.bind', name: 'jaxb-impl', version: jaxbVersion
+}
