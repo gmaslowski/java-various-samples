@@ -21,4 +21,5 @@ public class Employees extends AbstractBaseEntityJpaRepository<Employee> {
     public List<Employee> listAll() {
         return em.createQuery("from Employee e").getResultList();
     }
+
 }
