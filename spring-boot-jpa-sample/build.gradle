@@ -23,6 +23,7 @@ dependencies {
     def hsqldbVersion = '2.3.2'
     def guavaVersion = '17.0'
     def springBootVersion = '1.0.2.RELEASE'
+    def jaxbVersion='2.2'
 
     compile group: 'com.google.guava', name: 'guava', version: guavaVersion
 
@@ -32,4 +33,7 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: springBootVersion
 
     compile group: 'org.hsqldb', name: 'hsqldb', version: hsqldbVersion
+
+    compile group: 'javax.xml.bind', name: 'jaxb-api', version: jaxbVersion
+    compile group: 'com.sun.xml.bind', name: 'jaxb-impl', version: jaxbVersion
 }

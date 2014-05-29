@@ -11,6 +11,9 @@ import static javax.persistence.GenerationType.AUTO;
 @MappedSuperclass
 public abstract class BaseEntity<ID extends Serializable> {
 
+    public BaseEntity() {
+    }
+
     @Id
     @GeneratedValue(strategy = AUTO)
     protected ID id;
