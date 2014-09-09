@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 class GroovyListsTest extends Specification {
 
-    def "shouldAssertList"() {
+    def "should assert list"() {
         when:
         def names = ["John", "Jane", "Jim", "Juan", "Juan"]
 

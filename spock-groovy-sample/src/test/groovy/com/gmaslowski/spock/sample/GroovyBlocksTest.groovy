@@ -5,7 +5,7 @@ import spock.lang.Specification
 
 class GroovyBlocksTest extends Specification {
 
-    def "shouldExplainSpockApproachToTest_1"() {
+    def "should explain spock approach to test #1"() {
 
         expect: "you can write description here"
         Math.max(a, b) == c
@@ -16,7 +16,7 @@ class GroovyBlocksTest extends Specification {
         c = 2
     }
 
-    def "shouldExplainSpockApproachToTest_2"() {
+    def "should explain spock approach to test #2"() {
         setup:
         def a = 1
         def b = 2
