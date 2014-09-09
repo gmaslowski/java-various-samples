@@ -5,7 +5,7 @@ import spock.lang.Specification;
 class GroovyParametrizedTest extends Specification {
     int sum = 0
 
-    def "shouldAddTwoNumbers"() {
+    def "should add two numbers"() {
         when:
         sum = el1 + el2;
 
@@ -19,7 +19,7 @@ class GroovyParametrizedTest extends Specification {
         15  | 485 | 500
     }
 
-    def "shouldAddTwoNumbersDifferentDataInput"() {
+    def "should add two numbers different data input"() {
         expect:
         expectedSum == el1 + el2;
 

@@ -15,7 +15,7 @@ class GroovyDummyServiceTest extends Specification {
 
     private int dummyId = 17
 
-    def "shouldDeactivateDummyOnRetrievalOfActiveDummy"() {
+    def "should deactivate dummy on retrieval of active dummy"() {
         setup:
         dummyRepository.getDummyById(dummyId) >> ACTIVE_DUMMY_OBJECT
 
@@ -27,7 +27,7 @@ class GroovyDummyServiceTest extends Specification {
     }
 
 
-    def "shouldDeactivateDummyOnRetrievalOfNotActiveDummy"() {
+    def "should deactivate dummy on retrieval of not active dummy"() {
         setup:
         dummyRepository.getDummyById(dummyId) >> NOT_ACTIVE_DUMMY_OBJECT
 
@@ -38,7 +38,7 @@ class GroovyDummyServiceTest extends Specification {
         !dummy.active
     }
 
-    def "shouldCallRepositoryTwoTimes"() {
+    def "should call repository two times"() {
         when:
         dummyService.evenDummierLogic(dummyId)
 

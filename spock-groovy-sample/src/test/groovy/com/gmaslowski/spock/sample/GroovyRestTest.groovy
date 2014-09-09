@@ -5,7 +5,7 @@ import spock.lang.Specification
 
 class GroovyRestTest extends Specification {
 
-    def "shouldGetInfoAboutDriver"() {
+    def "should get info about driver"() {
 
         given:
         def client = new RESTClient("http://ergast.com")
