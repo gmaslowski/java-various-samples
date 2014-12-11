@@ -3,7 +3,6 @@ package com.gmaslowski.swing;
 import org.junit.Test;
 
 import static com.gmaslowski.swing.test.utils.SwingCyborg.swingCyborg;
-import static java.lang.Thread.sleep;
 
 public class SwingApplicationTest {
 
