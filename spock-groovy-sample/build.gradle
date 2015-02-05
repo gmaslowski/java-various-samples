@@ -14,10 +14,13 @@ dependencies {
     def JUnitParamsVersion = '0.9.0'
     def junitVersion = '4.8.2'
     def festVersion = '1.4'
-    def spockVersion = '0.7-groovy-2.0'
     def mockitoVersion = '1.9.5'
-    def httpBuilderVersion = '0.7.1'
     def restAssuredVersion = '2.3.3'
+
+    def spockVersion = '0.7-groovy-2.0'
+    def httpBuilderVersion = '0.7.1'
+
+    def springVersion = '4.1.4.RELEASE'
 
     compile group: 'com.google.guava', name: 'guava', version: guavaVersion
     compile group: 'pl.pragmatists', name: 'JUnitParams', version: JUnitParamsVersion
@@ -27,7 +30,13 @@ dependencies {
     compile group: 'com.jayway.restassured', name: 'rest-assured', version: restAssuredVersion
 
     compile group: 'org.spockframework', name: 'spock-core', version: spockVersion
+    compile group: 'org.spockframework', name: 'spock-spring', version: spockVersion
+
     compile group: 'org.codehaus.groovy.modules.http-builder', name: 'http-builder', version: httpBuilderVersion
+
+    compile group: 'org.springframework', name: 'spring-core', version: springVersion
+    compile group: 'org.springframework', name: 'spring-context', version: springVersion
+    compile group: 'org.springframework', name: 'spring-test', version: springVersion
 }
 
 test {
