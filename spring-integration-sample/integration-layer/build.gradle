@@ -1,0 +1,33 @@
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+group = 'com.gmaslowski'
+version = '0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework.integration:spring-integration-core:4.1.2.RELEASE'
+    compile 'org.springframework.integration:spring-integration-ws:4.1.2.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-integration:1.2.2.RELEASE'
+    compile 'org.springframework.integration:spring-integration-xml:4.1.2.RELEASE'
+    compile 'org.springframework.integration:spring-integration-java-dsl:1.0.1.RELEASE'
+}
+
+test {
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.2.2.RELEASE'
+    }
+}
