@@ -1,0 +1,13 @@
+apply plugin: 'java'
+
+group = 'com.gmaslowski'
+version = '0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+    testCompile 'trove:trove:1.1-beta-5'
+}
