@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+jar {
+    baseName = 'spring-websockets-actor-model'
+    group = 'com.gmaslowski.swam'
+    version = '0.1-SNAPSHOT'
+}
+
+bootRepackage {
+    mainClass = 'com.gmaslowski.swam.SwamConfiguration'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web") {
+        exclude module: "spring-boot-starter-tomcat"
+    }
+    compile("org.springframework.boot:spring-boot-starter-jetty")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.boot:spring-boot-starter-websocket")
+    compile("com.typesafe.akka:akka-actor_2.11:2.3.9")
+    compile("com.google.guava:guava:18.0")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.1'
+}
