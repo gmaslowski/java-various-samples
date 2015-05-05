@@ -3,7 +3,6 @@ package com.gmaslowski.di;
 import static java.util.Arrays.asList;
 import org.objenesis.Objenesis;
 import org.objenesis.ObjenesisStd;
-import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -60,7 +59,6 @@ public class DiContext {
 
     private static Object constructBean(Class<?> aClass) throws InstantiationException, IllegalAccessException,
             InvocationTargetException {
-        Constructor<?>[] constructors = aClass.getConstructors();
         return objenesis.newInstance(aClass);
     }
 
