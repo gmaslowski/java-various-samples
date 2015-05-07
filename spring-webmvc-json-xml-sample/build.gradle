@@ -1,11 +1,21 @@
-guavaVersion='17.0'
-springVersion='4.0.4.RELEASE'
-jacksonVersion='2.3.3'
-jaxbVersion='2.2'
+def guavaVersion = '17.0'
+def springVersion = '4.1.6.RELEASE'
+def jacksonVersion = '2.3.3'
+def jaxbVersion = '2.2'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.2'
+    }
+}
 
 apply plugin: 'java'
 apply plugin: 'war'
-apply plugin: 'jetty'
+apply plugin: 'com.bmuschko.tomcat'
 
 group = 'com.gmaslowski'
 version = '0.1-SNAPSHOT'
@@ -28,4 +38,17 @@ dependencies {
 
     compile group: 'javax.xml.bind', name: 'jaxb-api', version: jaxbVersion
     compile group: 'com.sun.xml.bind', name: 'jaxb-impl', version: jaxbVersion
+
+    compile 'javax.servlet:jstl:1.2'
+    compile 'taglibs:standard:1.1.2'
+
+    compile 'com.sun.faces:jsf-api:2.2.10'
+    compile 'com.sun.faces:jsf-impl:2.2.10'
+    compile 'javax.inject:javax.inject:1'
+
+    def tomcatVersion = '7.0.59'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+
 }
