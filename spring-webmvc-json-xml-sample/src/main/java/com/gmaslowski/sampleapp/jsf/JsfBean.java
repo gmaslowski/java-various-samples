@@ -15,7 +15,6 @@ public class JsfBean {
     private AppLogicService appLogicService;
 
     public WebEntity loadMe() {
-        System.out.println("jestem?");
         return fromAppEntity(appLogicService.getEntity());
     }
 
