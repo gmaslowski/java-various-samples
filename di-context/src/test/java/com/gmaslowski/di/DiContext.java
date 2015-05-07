@@ -1,8 +1,10 @@
 package com.gmaslowski.di;
 
 import static java.util.Arrays.asList;
+
 import org.objenesis.Objenesis;
 import org.objenesis.ObjenesisStd;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -66,6 +68,7 @@ public class DiContext {
         ArrayList<String> classes = new ArrayList<>();
         classes.add("com.gmaslowski.di.beans.Service");
         classes.add("com.gmaslowski.di.beans.Repository");
+        classes.add("com.gmaslowski.di.beans.Component");
         return classes;
     }
 }
