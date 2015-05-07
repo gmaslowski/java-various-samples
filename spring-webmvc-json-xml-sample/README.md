@@ -1,12 +1,13 @@
 spring-webmvc-json-sample
 =========================
 
-Simple example on how to return different payload type (JSON/XML) based on Accept header.
+Simple example on how to return different payload type (JSON/XML) based on Accept header. 
+Additional the project contains integration with JSP and JSF pages.
 
 ## Run
-Navigate to project and run:
+Navigate to project and run (Tomcat 7 required due to EL2.2 dependency):
 ```bash
-gradle jettyRun
+gradle tomcatRun
 ```
 
 ## Examples
@@ -33,4 +34,16 @@ curl http://localhost:8080/spring-webmvc-json-xml-sample/entity -H "Accept: appl
     <values>value2</values>
     <values>value3</values>
 </appEntity>
+```
+
+### JSP Render
+Navigate the browser to: 
+```bash
+http://localhost:8080/spring-webmvc-json-xml-sample/jsp
+```
+
+### JSF Render
+Navigate the browser to: 
+```bash
+http://localhost:8080/spring-webmvc-json-xml-sample/jsf/list.jsf
 ```

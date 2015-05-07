@@ -1,18 +1,23 @@
 package com.gmaslowski.sampleapp.web.view;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
-import javax.xml.bind.annotation.XmlRootElement;
+import com.gmaslowski.sampleapp.app.entity.AppEntity;
 import java.util.List;
-
-import static com.google.common.collect.Lists.newArrayList;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @JsonSerialize
 @XmlRootElement
-public class AppEntity {
+public class WebEntity {
 
-    private String name = "simpleName";
-    private List<String> values = newArrayList("value1", "value2", "value3");
+    public static WebEntity fromAppEntity(AppEntity appEntity) {
+        WebEntity webEntity = new WebEntity();
+        webEntity.setName(appEntity.getName());
+        webEntity.setValues(appEntity.getValues());
+        return webEntity;
+    }
+
+    private String name;
+    private List<String> values;
 
     public String getName() {
         return name;
