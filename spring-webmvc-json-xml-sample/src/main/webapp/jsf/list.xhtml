@@ -9,9 +9,9 @@
 <h:body>
     Hello!
     <br/>
-    Name: #{jsfBean.loadMe().name}
+    Name: #{jsfBean.webEntity.name}
 
-    <ui:repeat value="#{jsfBean.loadMe().values}" var="value">
+    <ui:repeat value="#{jsfBean.webEntity.values}" var="value">
         Value:
         <div>#{value}</div>
     </ui:repeat>
