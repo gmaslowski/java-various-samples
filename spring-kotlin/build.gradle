@@ -1,0 +1,40 @@
+import static org.gradle.api.JavaVersion.VERSION_1_8
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.11.91.1'
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE'
+    }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'spring-boot'
+
+sourceCompatibility = VERSION_1_8
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.jetbrains.kotlin:kotlin-stdlib:0.11.91.1'
+    compile 'javax.inject:javax.inject:1'
+
+    compile("org.springframework.boot:spring-boot-starter-web") {
+        exclude module: "spring-boot-starter-tomcat"
+    }
+    compile 'org.springframework.boot:spring-boot-starter-jetty'
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+}
+
+springBoot {
+    mainClass = 'com.gmaslowski.spring.kotlin.AppConfiguration'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
