@@ -1,11 +1,13 @@
 package com.gmaslowski.spock.sample;
 
-import spock.lang.Specification;
+import spock.lang.Specification
+import spock.lang.Unroll;
 
 class GroovyParametrizedTest extends Specification {
     int sum = 0
 
-    def "should add two numbers"() {
+    @Unroll
+    def "#el1 + #el2 should be #expectedSum"() {
         when:
         sum = el1 + el2;
 
@@ -13,10 +15,10 @@ class GroovyParametrizedTest extends Specification {
         sum == expectedSum;
 
         where:
-        el1         | el2 | expectedSum
-        1           | 13  | 14
-        79879879879 | 25  | 32
-        15          | 485 | 500
+        el1 | el2 | expectedSum
+        1   | 13  | 14
+        7   | 25  | 32
+        15  | 485 | 500
     }
 
     def "should add two numbers different data input"() {
