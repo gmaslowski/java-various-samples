@@ -14,6 +14,7 @@ dependencies {
 
     // spring
     compile 'org.springframework.boot:spring-boot-starter:1.4.0.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-web:1.4.0.RELEASE'
 
     // camel
     compile 'org.apache.camel:camel-spring-boot:2.17.3'
@@ -26,12 +27,14 @@ dependencies {
 
     // misc
     compile 'org.projectlombok:lombok:1.16.10'
+    compile("org.springframework.boot:spring-boot-starter-data-mongodb:1.4.0.RELEASE")
 
     // testing
     testCompile 'org.springframework.boot:spring-boot-starter-test:1.4.0.RELEASE'
     testCompile 'com.gmaslowski:camel-test-support:0.0.4'
     testCompile 'org.apache.camel:camel-test:2.17.3'
     testCompile 'org.assertj:assertj-core:3.5.2'
+    testCompile 'com.github.fakemongo:fongo:2.0.9'
 }
 
 task wrapper(type: Wrapper) {
